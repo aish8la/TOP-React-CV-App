@@ -1,0 +1,14 @@
+#root {
+    display: flex;
+    height: 100vh;
+    height: 100dvh;
+}
+
+aside {
+    flex: 1;
+    overflow-y: auto;
+}
+
+main {
+    flex: 2;
+}
