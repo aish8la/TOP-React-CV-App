@@ -1,8 +1,15 @@
 import './App.css'
+import { CVPreviewScreen} from './components/CVPreviewPanel.jsx'
+import { FormPanel } from './components/CVFormPanel.jsx'
 
 function App() {
-
-  return
+  
+  return (
+    <>
+      <FormPanel />
+      <CVPreviewScreen />
+    </>
+  )
 }
 
 export default App
