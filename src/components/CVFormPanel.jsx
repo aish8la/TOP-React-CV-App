@@ -1,3 +1,5 @@
+import '../styles/CVFormPanel.css'
+
 import { BasicInfoSection } from './BasicInfoSection.jsx'
 
 export function FormPanel() {

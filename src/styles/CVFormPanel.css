@@ -1,0 +1,22 @@
+:root {
+    --fieldset-top-bottom-padding: 1.5em;
+    --fieldset-side-padding: 0;
+    --fieldset-top-bottom-margin: 1.5em;
+    --fieldset-side-margin: 1em;
+}
+
+fieldset {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 
+    var(--fieldset-top-bottom-padding)
+    var(--fieldset-side-padding);
+    margin: 
+    var(--fieldset-top-bottom-margin)
+    var(--fieldset-side-margin);
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
