@@ -20,18 +20,18 @@ export const education = [
     institution: "University of Example",
     level: "Bachelor of Science in Computer Science",
     location: "New York, NY",
-    startDate: "2018-09",
-    endDate: "2022-06",
+    startDate: "2021-05-01",
+    endDate: "2022-06-01",
     grade: "3.8 GPA",
     description: "Focused on software development, data structures, and system design. Completed a capstone project on full-stack web development."
   },
   {
-    uid: "edu-001",
+    uid: "edu-002",
     institution: "Example Technical Institute",
     level: "Diploma in Web Development",
     location: "Boston, MA",
-    startDate: "2016-01",
-    endDate: "2017-12",
+    startDate: "2016-01-01",
+    endDate: "2017-12-01",
     grade: "Distinction",
     description: "Gained hands-on experience with HTML, CSS, JavaScript, and backend technologies through practical projects."
   }
