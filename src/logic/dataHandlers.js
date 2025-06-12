@@ -1,3 +1,19 @@
+export function addEducation(dataObj) {
+  const object = {
+    uid: crypto.randomUUID(),
+    institution: dataObj.institution,
+    level: dataObj.level,
+    location: dataObj.location,
+    startDate: dataObj.startDate,
+    endDate: dataObj.endDate,
+    grade: dataObj.grade,
+    description: dataObj.description
+  }
+
+  education.push(object);
+}
+
+
 export const education = [
   {
     uid: "edu-001",
