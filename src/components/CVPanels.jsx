@@ -1,6 +1,7 @@
 import { FormPanel } from "./CVFormPanel";
 import { CVPreviewScreen } from "./CVPreviewPanel";
 import { EducationForm } from "./EducationForm";
+import { WorkExperienceForm } from "./WorkExperienceForm";
 import { useState } from "react";
 import { cvData, updateData } from "../logic/dataHandlers";
 
@@ -56,6 +57,14 @@ export function CVPanels() {
         )}
         {mainScreen === "Education" && (
             <EducationForm 
+                currentFormData={editingEntry} 
+                saveHandler={saveArrData}
+                closeHandler={returnToPreview}
+                changeHandler={changeHandler}
+            />
+        )}
+        {mainScreen === "Work" && (
+            <WorkExperienceForm 
                 currentFormData={editingEntry} 
                 saveHandler={saveArrData}
                 closeHandler={returnToPreview}

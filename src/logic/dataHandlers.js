@@ -33,7 +33,7 @@ export const cvData = {
       company: "Bank of Maldives",
       location: "Malé, Maldives",
       startDate: "2020-01-01",
-      endDate: new Date(),
+      endDate: "2022-01-02",
       description: "Support debt recovery processes and customer follow-up; improved Excel workflows for data tracking."
     },
     {
