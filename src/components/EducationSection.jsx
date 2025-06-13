@@ -1,10 +1,10 @@
-export function EducationSection({ cvData, onEducationClick }) {
+export function EducationSection({ cvData, onEducationEntryClick }) {
 
     const currentForm = cvData?.education;
 
     function onClickEntry(e) {
         const id = e.target.closest("li").id;
-        onEducationClick(id)
+        onEducationEntryClick("Education",id)
     }
 
     return (

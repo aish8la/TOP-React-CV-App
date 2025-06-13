@@ -8,40 +8,58 @@ import { cvData, updateData } from "../logic/dataHandlers";
 export function CVPanels() {
 
     const [currentCVData, setCurrentCVData] = useState( {...cvData} );
-    const [mainScreen, setMainScreen] = useState({type: "Preview"});
+    const [mainScreen, setMainScreen] = useState("Preview");
+    const [editingEntry, setEditingEntry] = useState(null);
 
     function returnToPreview() {
-        setMainScreen({type: "Preview"})
+        setMainScreen("Preview");
     }
 
-    function showEducationForm(eduUID) {
-        const entry = currentCVData.education.find(item => item.uid === eduUID);
-        setMainScreen({...entry, type: "Education"});
+    function showForm(type, entryUID) {
+
+        let field = "";
+        if(type === "Education") {
+            field = "education";
+        } else if (type === "Work") {
+            field = "workExperience";
+        }
+
+        const entry = currentCVData[field].find(item => item.uid === entryUID);
+        setEditingEntry(entry);
+        setMainScreen(type);
     }
 
-    function saveArrData(propertyName, newValue) {
-        const newData = currentCVData[propertyName].filter(item => item.uid !== newValue.uid);
-        newData.push(newValue);
-        updateData(propertyName, newValue);
+    function changeHandler(e) {
+        setEditingEntry({
+            ...editingEntry,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    function saveArrData(propertyName) {
+        const newData = currentCVData[propertyName].filter(item => item.uid !== editingEntry.uid);
+        newData.push(editingEntry);
+        updateData(propertyName, editingEntry);
         setCurrentCVData({
             ...currentCVData,
             [propertyName]: newData
         });
+        returnToPreview();
     }
 
 
     return (
         <>
-        <FormPanel onEducationClick={showEducationForm} cvData={currentCVData}/>
-        {mainScreen.type === "Preview" && (
+        <FormPanel onEntryClick={showForm} cvData={currentCVData}/>
+        {mainScreen === "Preview" && (
             <CVPreviewScreen />
         )}
-        {mainScreen.type === "Education" && (
+        {mainScreen === "Education" && (
             <EducationForm 
-                currentFormData={mainScreen} 
-                key={mainScreen?.uid || ""}
+                currentFormData={editingEntry} 
                 saveHandler={saveArrData}
                 closeHandler={returnToPreview}
+                changeHandler={changeHandler}
             />
         )}
         </>
