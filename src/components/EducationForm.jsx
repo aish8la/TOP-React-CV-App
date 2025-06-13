@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function EducationForm({ currentFormData }) {
+export function EducationForm({ currentFormData, saveHandler, closeHandler }) {
 
     
 
@@ -13,6 +13,10 @@ export function EducationForm({ currentFormData }) {
             ...eduFormData,
             [name]: value
         });
+    }
+
+    function saveChanges() {
+        saveHandler("education", eduFormData);
     }
 
     return (
@@ -46,6 +50,8 @@ export function EducationForm({ currentFormData }) {
                     <span>Description</span>
                     <input type="text" id="description" value={eduFormData?.description || ""} name="description" onChange={onChange} />
                 </label>
+                <button type="button" onClick={closeHandler}>Cancel</button>
+                <button type="button" onClick={saveChanges}>Save</button>
             </form>
         </main>
 
