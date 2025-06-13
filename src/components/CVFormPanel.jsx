@@ -1,14 +1,13 @@
 import '../styles/CVFormPanel.css'
-import { education } from '../logic/dataHandlers.js'
 import { EducationSection } from './EducationSection.jsx'
 import { BasicInfoSection } from './BasicInfoSection.jsx'
 
-export function FormPanel() {
+export function FormPanel({ onEducationClick, cvData }) {
     return (
         <aside>
             <form action="">
                 <BasicInfoSection />
-                <EducationSection data={education} />
+                <EducationSection cvData={cvData} onEducationClick={onEducationClick}/>
             </form>
         </aside>
     )
