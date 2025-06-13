@@ -10,14 +10,6 @@ export function CVPanels() {
     const [currentCVData, setCVData] = useState( {...cvData} );
     const [mainScreen, setMainScreen] = useState({type: "Preview"});
 
-    let currentScreen;
-
-    if(mainScreen.type === "Preview") {
-        currentScreen = <CVPreviewScreen />
-    } else if (mainScreen.type === "Education") {
-        currentScreen = <EducationForm currentFormData={mainScreen} key={mainScreen?.uid || ""}/>
-    }
-
     function showEducationForm(eduUID) {
         const entry = currentCVData.education.find(item => item.uid === eduUID);
         setMainScreen({...entry, type: "Education"});
@@ -27,7 +19,15 @@ export function CVPanels() {
     return (
         <>
         <FormPanel onEducationClick={showEducationForm} cvData={currentCVData}/>
-        {currentScreen}
+        {mainScreen.type === "Preview" && (
+            <CVPreviewScreen />
+        )}
+        {mainScreen.type === "Education" && (
+            <EducationForm 
+                currentFormData={mainScreen} 
+                key={mainScreen?.uid || ""}
+            />
+        )}
         </>
     )
 }
