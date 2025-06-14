@@ -75,6 +75,16 @@ export function CVPanels() {
         });
     }
 
+        function deleteEntry(propertyName, uid) {
+
+        const newData = currentCVData[propertyName].filter(item => item.uid !== uid);
+        updateData(propertyName, newData);
+        setCurrentCVData({
+            ...currentCVData,
+            [propertyName]: newData
+        });
+    }
+
 
     return (
         <>
@@ -85,6 +95,7 @@ export function CVPanels() {
             changeHandler={changeFields}
             fieldData={editingFields}
             saveFields={saveFields}
+            deleteEntry={deleteEntry}
         />
         {mainScreen === "Preview" && (
             <CVPreviewScreen cvData={currentCVData}/>

@@ -1,10 +1,15 @@
-export function EducationSection({ cvData, onEducationEntryClick, createEntry }) {
+export function EducationSection({ cvData, onEducationEntryClick, createEntry, deleteEntry }) {
 
     const currentForm = cvData?.education;
 
     function onClickEntry(e) {
         const id = e.target.closest("li").id;
         onEducationEntryClick("Education",id)
+    }
+
+    function deleteItem(e) {
+        const id = e.target.closest("li").id;
+        deleteEntry("education", id);
     }
 
     return (
@@ -17,14 +22,16 @@ export function EducationSection({ cvData, onEducationEntryClick, createEntry })
                     return (
                         <li key={entry.uid}
                             id={entry.uid}
-                            onClick={onClickEntry}
                         >
-                            <div>
-                                {entry.level}
+                            <div onClick={onClickEntry}>
+                                <div>
+                                    {entry.level}
+                                </div>
+                                <div>
+                                    {entry.institution}
+                                </div>
                             </div>
-                            <div>
-                                {entry.institution}
-                            </div>
+                            <button type="button" onClick={deleteItem}>Delete</button>
                         </li>
                     )
                 })}
