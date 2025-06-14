@@ -58,7 +58,7 @@ export function CVPanels() {
         
         newData = currentCVData[propertyName].filter(item => item.uid !== entryToSave.uid);
         newData.push(entryToSave);
-        updateData(propertyName, entryToSave);
+        updateData(propertyName, newData);
         setCurrentCVData({
             ...currentCVData,
             [propertyName]: newData
@@ -87,7 +87,7 @@ export function CVPanels() {
             saveFields={saveFields}
         />
         {mainScreen === "Preview" && (
-            <CVPreviewScreen cvData={cvData}/>
+            <CVPreviewScreen cvData={currentCVData}/>
         )}
         {mainScreen === "Education" && (
             <EducationForm 
