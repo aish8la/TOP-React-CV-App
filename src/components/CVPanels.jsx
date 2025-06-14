@@ -11,6 +11,7 @@ export function CVPanels() {
     const [currentCVData, setCurrentCVData] = useState( {...cvData} );
     const [mainScreen, setMainScreen] = useState("Preview");
     const [editingEntry, setEditingEntry] = useState(null);
+    const [editingFields, setEditingFields] = useState(currentCVData?.basicInfo);
 
     function returnToPreview() {
         setMainScreen("Preview");
@@ -41,6 +42,13 @@ export function CVPanels() {
         });
     }
 
+    function changeFields(e) {
+        setEditingFields({
+            ...editingFields,
+            [e.target.name]: e.target.value
+        });
+    }
+
     function saveArrData(propertyName) {
         let newData = [];
 
@@ -58,6 +66,15 @@ export function CVPanels() {
         returnToPreview();
     }
 
+    function saveFields(propertyName) {
+        let entryToSave = {...editingFields};
+        updateData(propertyName, entryToSave);
+        setCurrentCVData({
+            ...currentCVData,
+            [propertyName]: entryToSave
+        });
+    }
+
 
     return (
         <>
@@ -65,6 +82,9 @@ export function CVPanels() {
             onEntryClick={showForm} 
             cvData={currentCVData}
             createEntry={showForm}
+            changeHandler={changeFields}
+            fieldData={editingFields}
+            saveFields={saveFields}
         />
         {mainScreen === "Preview" && (
             <CVPreviewScreen />
