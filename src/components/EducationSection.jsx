@@ -1,4 +1,4 @@
-export function EducationSection({ cvData, onEducationEntryClick }) {
+export function EducationSection({ cvData, onEducationEntryClick, createEntry }) {
 
     const currentForm = cvData?.education;
 
@@ -29,7 +29,7 @@ export function EducationSection({ cvData, onEducationEntryClick }) {
                     )
                 })}
             </ul>
-            <button>Create New</button>
+            <button type="button" onClick={() => createEntry("Education")}>Create New</button>
         </fieldset>
     )
 }

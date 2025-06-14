@@ -1,4 +1,4 @@
-export function WorkExperienceSection({ cvData, onWorkClick }) {
+export function WorkExperienceSection({ cvData, onWorkClick, createEntry }) {
 
     const currentForm = cvData?.workExperience;
 
@@ -29,7 +29,7 @@ export function WorkExperienceSection({ cvData, onWorkClick }) {
                     )
                 })}
             </ul>
-            <button>Create New</button>
+            <button type="button" onClick={() => createEntry("Work")}>Create New</button>
         </fieldset>
     )
 }

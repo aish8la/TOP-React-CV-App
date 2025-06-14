@@ -14,18 +14,22 @@ export function CVPanels() {
 
     function returnToPreview() {
         setMainScreen("Preview");
+        setEditingEntry(null);
     }
 
     function showForm(type, entryUID) {
 
-        let field = "";
-        if(type === "Education") {
-            field = "education";
-        } else if (type === "Work") {
-            field = "workExperience";
+        let entry = {}
+        if(entryUID) {
+            let field = "";
+            if(type === "Education") {
+                field = "education";
+            } else if (type === "Work") {
+                field = "workExperience";
+            }
+            entry = currentCVData[field].find(item => item.uid === entryUID);
         }
 
-        const entry = currentCVData[field].find(item => item.uid === entryUID);
         setEditingEntry(entry);
         setMainScreen(type);
     }
@@ -38,9 +42,15 @@ export function CVPanels() {
     }
 
     function saveArrData(propertyName) {
-        const newData = currentCVData[propertyName].filter(item => item.uid !== editingEntry.uid);
-        newData.push(editingEntry);
-        updateData(propertyName, editingEntry);
+        let newData = [];
+
+        const entryToSave = editingEntry?.uid ?
+            editingEntry:
+            {...editingEntry, uid: crypto.randomUUID()}
+        
+        newData = currentCVData[propertyName].filter(item => item.uid !== entryToSave.uid);
+        newData.push(entryToSave);
+        updateData(propertyName, entryToSave);
         setCurrentCVData({
             ...currentCVData,
             [propertyName]: newData
@@ -51,7 +61,11 @@ export function CVPanels() {
 
     return (
         <>
-        <FormPanel onEntryClick={showForm} cvData={currentCVData}/>
+        <FormPanel 
+            onEntryClick={showForm} 
+            cvData={currentCVData}
+            createEntry={showForm}
+        />
         {mainScreen === "Preview" && (
             <CVPreviewScreen />
         )}
