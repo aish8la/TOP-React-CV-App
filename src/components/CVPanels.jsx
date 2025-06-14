@@ -87,7 +87,7 @@ export function CVPanels() {
             saveFields={saveFields}
         />
         {mainScreen === "Preview" && (
-            <CVPreviewScreen />
+            <CVPreviewScreen cvData={cvData}/>
         )}
         {mainScreen === "Education" && (
             <EducationForm 
