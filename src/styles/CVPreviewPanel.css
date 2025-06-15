@@ -41,7 +41,7 @@
 
 .cv-content-grid, .cv-title-grid {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1.5fr 4fr;
     column-gap: 1rem;
     row-gap: 0.8rem;
 }
@@ -89,9 +89,10 @@
     color: var(--main-accent-color);
 }
 
+
 .cv-entry-titles {
     font-weight: 700;
-    line-height: 2rem;
+    margin-bottom: 0.3rem;
 }
 
 .cv-entry-titles ~ div {
@@ -114,4 +115,17 @@
     display: flex;
     flex-direction: column;
     gap: 3em;
+}
+
+@media print {
+
+    .cv-preview-ctn {
+        padding: 0px;
+    }
+
+    .cv-ctn {
+        box-shadow: none;
+        width: 100%;
+        padding: 1.8rem 1rem;
+    }
 }

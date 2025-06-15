@@ -15,3 +15,9 @@ aside {
 main {
     flex: 2;
 }
+
+@media print {
+    aside {
+        display: none;
+    }
+}
