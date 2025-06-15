@@ -3,6 +3,8 @@
     --fieldset-side-padding: 0;
     --fieldset-top-bottom-margin: 1.5em;
     --fieldset-side-margin: 1em;
+    --border-line-color: rgba(128, 128, 128, 0.571);
+    --hover-color: rgb(225, 225, 225);
 }
 
 fieldset {
@@ -19,4 +21,48 @@ fieldset {
 label {
     display: flex;
     flex-direction: column;
+}
+
+li {
+    list-style: none;
+    border: 1px solid var(--border-line-color);
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+li.last-item {
+    border-bottom: 1px solid var(--border-line-color);
+}
+
+li div {
+    line-height: 1.25rem;
+}
+
+li > div.entry-div {
+    transition: background-color 0.5s ease;
+    padding: 0.525rem 0.75rem;
+    flex: 1;
+}
+
+li > div.entry-div:hover {
+    cursor: pointer;
+    background-color: var(--hover-color);
+    
+}
+
+li > button {
+    flex-basis: min(20%, 50px);
+    border: none;
+    border-left: 1px solid var(--border-line-color);
+}
+
+fieldset.form-list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+button.create-new-btn {
+    align-self: flex-end;
 }

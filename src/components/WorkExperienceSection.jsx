@@ -13,17 +13,19 @@ export function WorkExperienceSection({ cvData, onWorkClick, createEntry, delete
     }
 
     return (
-        <fieldset>
+        <fieldset className="form-list-section">
             <legend>
                 Work Experience
             </legend>
             <ul>
-                {currentForm.map(entry => {
+                {currentForm.map((entry, ind) => {
                     return (
                         <li key={entry.uid}
                             id={entry.uid}
+                            className={ind + 1=== currentForm.length && "last-item"}
+                            
                         >
-                            <div onClick={onClickEntry}>
+                            <div className="entry-div" onClick={onClickEntry}>
                                 <div>
                                     {entry.position}
                                 </div>
@@ -31,12 +33,12 @@ export function WorkExperienceSection({ cvData, onWorkClick, createEntry, delete
                                     {entry.company}
                                 </div>
                             </div>
-                            <button type="button" onClick={deleteItem}>Delete</button>
+                            <button type="button" onClick={deleteItem}><img width="20px" src="src/assets/icons/trash-can-outline.svg" alt="" /></button>
                         </li>
                     )
                 })}
             </ul>
-            <button type="button" onClick={() => createEntry("Work")}>Create New</button>
+            <button className="create-new-btn"  type="button" onClick={() => createEntry("Work")}>Create New</button>
         </fieldset>
     )
 }
