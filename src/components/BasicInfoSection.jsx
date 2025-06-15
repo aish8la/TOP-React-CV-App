@@ -18,7 +18,7 @@ export function BasicInfoSection({ changeHandler, fieldData, saveFields }) {
                 <span>Phone</span>
                 <input type="tel" id="phone" name="phone" value={fieldData?.phone || ""} onChange={changeHandler} />
             </label>
-            <button type="button" onClick={saveFields}>Save</button>
+            <button type="button" onClick={() => saveFields("basicInfo")}>Save</button>
         </fieldset>
     )
 }
