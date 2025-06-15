@@ -16,7 +16,7 @@ export function CVWorkExpSection({ workData }) {
                     <Fragment key={entry.uid}>
                         <div className="entry-period content-title">{entry.startDate + " to " + entry.endDate}</div>
                         <div>
-                            <div>{entry.company}</div>
+                            <div className="cv-entry-titles">{entry.company}</div>
                             <div>{entry.position}</div>
                             <div>{entry.location}</div>
                             <div>{entry.description}</div>

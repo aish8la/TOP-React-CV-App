@@ -16,7 +16,7 @@ export function CVEducSection({ educationData }) {
                     <Fragment key={entry.uid}>
                         <div className="entry-period content-title">{entry.startDate + " to " + entry.endDate}</div>
                         <div>
-                            <div>{entry.institution}</div>
+                            <div className="cv-entry-titles">{entry.institution}</div>
                             <div>{entry.level}</div>
                             <div>{entry.location}</div>
                             <div>{entry.description}</div>

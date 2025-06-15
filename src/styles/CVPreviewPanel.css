@@ -1,3 +1,7 @@
+:root {
+    --main-accent-color: #ca8a04
+}
+
 .main-screen-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -66,7 +70,17 @@
 }
 
 .content-title {
-    text-align: end;    
+    text-align: end;  
+    color: var(--main-accent-color);
+}
+
+.cv-entry-titles {
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.cv-entry-titles ~ div {
+    line-height: 1.5rem;
 }
 
 .separator {
@@ -77,6 +91,8 @@
 
 .separator > hr {
     flex: 1;
+    border: none;
+    border-top: 2px solid var(--main-accent-color);
 }
 
 .section-ctn {
