@@ -3,18 +3,18 @@ import { Fragment } from "react"
 export function CVWorkExpSection({ workData }) {
     return (
         <section>
-            <div>
-                <div>
+            <div className="cv-title-grid">
+                <div className="content-title">
                     <h4>Work Experience</h4>
                 </div>
-                <div>
+                <div className="separator">
                     <hr />
                 </div>
             </div>
-            <div>
+            <div className="cv-content-grid">
                 {workData.map(entry => 
                     <Fragment key={entry.uid}>
-                        <div>{entry.startDate + " to " + entry.endDate}</div>
+                        <div className="entry-period content-title">{entry.startDate + " to " + entry.endDate}</div>
                         <div>
                             <div>{entry.company}</div>
                             <div>{entry.position}</div>
