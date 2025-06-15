@@ -1,12 +1,15 @@
 #root {
     display: flex;
-    height: 100vh;
-    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 aside {
     flex: 1;
     overflow-y: auto;
+    position: sticky;
+    max-height: 100dvh;
+    top: 0px;
 }
 
 main {
