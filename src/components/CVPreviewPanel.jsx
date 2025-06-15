@@ -1,5 +1,6 @@
 import { CVEducSection } from "./CVEduSection.jsx";
 import { CVWorkExpSection } from "./CVWorkExpSection.jsx"
+import "../styles/CVPreviewPanel.css"
 
 export function CVPreviewScreen({ cvData }) {
     return (

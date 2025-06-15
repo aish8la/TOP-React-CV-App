@@ -6,7 +6,7 @@ export function EducationForm({ currentFormData, saveHandler, closeHandler, chan
 
     return (
         <main>
-            <form>
+            <form className="main-screen-form">
                 <label htmlFor="institution">
                     <span>Institution</span>
                     <input type="text" id="institution" value={currentFormData?.institution || ""} name="institution" onChange={changeHandler} />
@@ -33,10 +33,12 @@ export function EducationForm({ currentFormData, saveHandler, closeHandler, chan
                 </label>
                 <label htmlFor="description">
                     <span>Description</span>
-                    <input type="text" id="description" value={currentFormData?.description || ""} name="description" onChange={changeHandler} />
+                    <textarea id="description" value={currentFormData?.description || ""} name="description" onChange={changeHandler} ></textarea>
                 </label>
-                <button type="button" onClick={closeHandler}>Cancel</button>
-                <button type="button" onClick={saveChanges}>Save</button>
+                <div>
+                    <button type="button" onClick={closeHandler}>Cancel</button>
+                    <button type="button" onClick={saveChanges}>Save</button>
+                </div>
             </form>
         </main>
 

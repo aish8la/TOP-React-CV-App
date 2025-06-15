@@ -1,0 +1,23 @@
+.main-screen-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: min-content;
+    gap: 1rem;
+    padding: 2.5rem 3rem;
+    min-height: 100%;
+}
+
+.main-screen-form > div {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-screen-form > label[for="description"] {
+    grid-column: span 2;
+}
+
+.main-screen-form > label > textarea[name="description"] {
+    flex-grow: 1;
+    min-height: 200px;
+}

@@ -6,7 +6,7 @@ export function WorkExperienceForm({ currentFormData, saveHandler, closeHandler,
 
     return (
         <main>
-            <form>
+            <form className="main-screen-form">
                 <label htmlFor="position">
                     <span>Position</span>
                     <input type="text" id="position" value={currentFormData?.position || ""} name="position" onChange={changeHandler} />
@@ -29,10 +29,12 @@ export function WorkExperienceForm({ currentFormData, saveHandler, closeHandler,
                 </label>
                 <label htmlFor="description">
                     <span>Description</span>
-                    <input type="text" id="description" value={currentFormData?.description || ""} name="description" onChange={changeHandler} />
+                    <textarea id="description" value={currentFormData?.description || ""} name="description" onChange={changeHandler} ></textarea>
                 </label>
-                <button type="button" onClick={closeHandler}>Cancel</button>
-                <button type="button" onClick={saveChanges}>Save</button>
+                <div>
+                    <button type="button" onClick={closeHandler}>Cancel</button>
+                    <button type="button" onClick={saveChanges}>Save</button>
+                </div>
             </form>
         </main>
 

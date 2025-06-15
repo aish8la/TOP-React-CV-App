@@ -24,13 +24,17 @@ label > span {
     font-weight: 500;
 }
 
-input {
+input, textarea {
     padding: 0.125rem 0.75rem;
     line-height: 1.25rem;
     border: 1px solid var(--border-line-color);
     height: 2.5rem;
     transition: background-color, 0.5s ease;
     font-size: 1rem;
+}
+
+textarea {
+    resize: none;
 }
 
 input:hover {
