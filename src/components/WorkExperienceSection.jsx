@@ -26,10 +26,10 @@ export function WorkExperienceSection({ cvData, onWorkClick, createEntry, delete
                             
                         >
                             <div className="entry-div" onClick={onClickEntry}>
-                                <div>
+                                <div className="entry-main-txt">
                                     {entry.position}
                                 </div>
-                                <div>
+                                <div className="entry-sub-txt">
                                     {entry.company}
                                 </div>
                             </div>

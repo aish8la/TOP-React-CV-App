@@ -6,7 +6,7 @@
 fieldset.form-basic-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5em;
+    gap: 1em;
 }
 
 label[for="fullName"] {
@@ -16,15 +16,21 @@ label[for="fullName"] {
 }
 
 label[for="phone"], label[for="email"] {
-    flex-grow: 1;
+    flex: 1 1 40%;
+}
+
+label > span {
+    margin-bottom: min(10px, 0.5rem);
+    font-weight: 500;
 }
 
 input {
     padding: 0.125rem 0.75rem;
     line-height: 1.25rem;
     border: 1px solid var(--border-line-color);
-    height: 2rem;
+    height: 2.5rem;
     transition: background-color, 0.5s ease;
+    font-size: 1rem;
 }
 
 input:hover {
@@ -43,6 +49,8 @@ button {
     border: 1px solid var(--border-line-color);
     background-color: transparent;
     transition: background-color, 0.5s ease;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 button:hover {

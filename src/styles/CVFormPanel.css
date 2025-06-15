@@ -5,11 +5,13 @@
     --fieldset-side-margin: 1em;
     --border-line-color: rgba(128, 128, 128, 0.571);
     --hover-color: rgb(225, 225, 225);
+    --main-heading-size: 1.8rem;
+    --secondary-heading-size: 1.2rem;
 }
 
 fieldset {
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border-line-color);
     padding: 
     var(--fieldset-top-bottom-padding)
     var(--fieldset-side-padding);
@@ -65,4 +67,20 @@ fieldset.form-list-section {
 
 button.create-new-btn {
     align-self: flex-end;
+}
+
+fieldset > legend {
+    font-weight: 700;
+    font-size: var(--main-heading-size);
+}
+
+.entry-main-txt {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.entry-sub-txt {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(121, 121, 121);
 }

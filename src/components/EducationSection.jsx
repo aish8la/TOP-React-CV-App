@@ -26,10 +26,10 @@ export function EducationSection({ cvData, onEducationEntryClick, createEntry, d
                             
                         >
                             <div className="entry-div" onClick={onClickEntry}>
-                                <div>
+                                <div className="entry-main-txt">
                                     {entry.level}
                                 </div>
-                                <div>
+                                <div className="entry-sub-txt">
                                     {entry.institution}
                                 </div>
                             </div>
