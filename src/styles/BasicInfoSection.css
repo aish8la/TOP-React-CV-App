@@ -1,4 +1,9 @@
-fieldset {
+:root {
+    --border-line-color: rgba(128, 128, 128, 0.571);
+    --hover-color: rgb(225, 225, 225);
+}
+
+fieldset.form-basic-section {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
@@ -13,3 +18,35 @@ label[for="fullName"] {
 label[for="phone"], label[for="email"] {
     flex-grow: 1;
 }
+
+input {
+    padding: 0.125rem 0.75rem;
+    line-height: 1.25rem;
+    border: 1px solid var(--border-line-color);
+    height: 2rem;
+    transition: background-color, 0.5s ease;
+}
+
+input:hover {
+    background-color: var(--hover-color);
+}
+
+.form-basic-section > .button-ctn {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 0.75rem;
+    width: 10em;
+    border: 1px solid var(--border-line-color);
+    background-color: transparent;
+    transition: background-color, 0.5s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--hover-color);
+}
+

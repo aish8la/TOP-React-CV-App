@@ -2,7 +2,7 @@ import '../styles/BasicInfoSection.css'
 
 export function BasicInfoSection({ changeHandler, fieldData, saveFields }) {
     return (
-        <fieldset>
+        <fieldset className='form-basic-section'>
             <legend>
                 Basic Information
             </legend>
@@ -18,7 +18,10 @@ export function BasicInfoSection({ changeHandler, fieldData, saveFields }) {
                 <span>Phone</span>
                 <input type="tel" id="phone" name="phone" value={fieldData?.phone || ""} onChange={changeHandler} />
             </label>
-            <button type="button" onClick={saveFields}>Save</button>
+            <div className='button-ctn'>
+                <button type="button" onClick={saveFields}>Save</button>
+            </div>
+            
         </fieldset>
     )
 }
