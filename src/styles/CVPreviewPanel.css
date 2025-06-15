@@ -48,21 +48,36 @@
 
 .cv-ctn > header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cv-ctn > header > h1 {
+    font-size: 3rem;
+    color: var(--main-accent-color);
+}
+
+.cv-ctn > header > h1::first-letter {
+    color: black;
+    background-color: var(--main-accent-color);
+    padding: 2px 5px;
+    margin-right: 5px;
+    font-size: 4rem;
 }
 
 .cv-ctn > header > address {
     display: flex;
     flex-direction: column;
-    line-height: 1.25rem;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .cv-ctn > header > address > a {
     color: black;
     text-decoration: none;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
 }
 
 .cv-title-grid {
