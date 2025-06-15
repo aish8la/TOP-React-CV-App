@@ -1,3 +1,5 @@
+import deleteIcon from "../assets/icons/trash-can-outline.svg";
+
 export function WorkExperienceSection({ cvData, onWorkClick, createEntry, deleteEntry }) {
 
     const currentForm = cvData?.workExperience;
@@ -33,7 +35,7 @@ export function WorkExperienceSection({ cvData, onWorkClick, createEntry, delete
                                     {entry.company}
                                 </div>
                             </div>
-                            <button type="button" onClick={deleteItem}><img width="20px" src="src/assets/icons/trash-can-outline.svg" alt="" /></button>
+                            <button type="button" onClick={deleteItem}><img width="20px" src={deleteIcon} alt="" /></button>
                         </li>
                     )
                 })}
