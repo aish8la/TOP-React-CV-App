@@ -22,7 +22,7 @@ export function WorkExperienceSection({ cvData, onWorkClick, createEntry, delete
                     return (
                         <li key={entry.uid}
                             id={entry.uid}
-                            className={ind + 1=== currentForm.length && "last-item"}
+                            className={ind + 1=== currentForm.length ? "last-item" : ""}
                             
                         >
                             <div className="entry-div" onClick={onClickEntry}>
