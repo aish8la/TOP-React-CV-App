@@ -50,14 +50,19 @@ export function CVPanels() {
     }
 
     function saveArrData(propertyName) {
-        let newData = [];
 
         const entryToSave = editingEntry?.uid ?
             editingEntry:
             {...editingEntry, uid: crypto.randomUUID()}
         
-        newData = currentCVData[propertyName].filter(item => item.uid !== entryToSave.uid);
-        newData.push(entryToSave);
+        const existing = currentCVData[propertyName].some(item => item.uid === entryToSave.uid);
+
+        const newData = existing
+            ? currentCVData[propertyName].map(item =>
+                item.uid === entryToSave.uid ? entryToSave : item
+            )
+            : [...currentCVData[propertyName], entryToSave];
+
         updateData(propertyName, newData);
         setCurrentCVData({
             ...currentCVData,
